@@ -1,0 +1,10 @@
+{
+  "test.txt": [
+    {
+      "chunkId": 0,
+      "nodeHost": "127.0.0.1",
+      "nodePort": 5000,
+      "hash": "b58f34e73579dcfb700daacadd50fa7503f1e4c6c881cb4d720fe84a57be306d"
+    }
+  ]
+}
