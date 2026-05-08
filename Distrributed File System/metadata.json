@@ -2,273 +2,67 @@
   "test.txt": [
     {
       "chunkId": 0,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "b58f34e73579dcfb700daacadd50fa7503f1e4c6c881cb4d720fe84a57be306d"
-    },
-    {
-      "chunkId": 0,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "b58f34e73579dcfb700daacadd50fa7503f1e4c6c881cb4d720fe84a57be306d"
-    },
-    {
-      "chunkId": 0,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "b58f34e73579dcfb700daacadd50fa7503f1e4c6c881cb4d720fe84a57be306d"
-    },
-    {
-      "chunkId": 0,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "b58f34e73579dcfb700daacadd50fa7503f1e4c6c881cb4d720fe84a57be306d"
-    },
-    {
-      "chunkId": 0,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "b58f34e73579dcfb700daacadd50fa7503f1e4c6c881cb4d720fe84a57be306d"
-    },
-    {
-      "chunkId": 0,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "4d0fcee44bd65ea0a0c983da992b053d6f5d94a25e91eae6a783f59fb5ef0cc1"
-    },
-    {
-      "chunkId": 0,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "b1d3063dba1fed92c893d70ca22fd5a6ee49b1eadcac74ef0c007bbef666bb8c"
-    },
-    {
-      "chunkId": 0,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "b1d3063dba1fed92c893d70ca22fd5a6ee49b1eadcac74ef0c007bbef666bb8c"
-    },
-    {
-      "chunkId": 0,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "b1d3063dba1fed92c893d70ca22fd5a6ee49b1eadcac74ef0c007bbef666bb8c"
-    },
-    {
-      "chunkId": 0,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "608686b0b386c0949403d322a56a45182991030ed82efe71174c7191670a9d05"
+      "hash": "2309990b596bb4cfdc51c14491d79b6f33b010e6b618779d4f84da14e0bd69cc",
+      "users": [
+        "user1",
+        "user2"
+      ]
     },
     {
       "chunkId": 1,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "dbef3d8b6eee8448d36c0d760bb5ddb6c6e78d7132ad441b762c0a23d7115e1d"
+      "hash": "4b441660db5db00476c2feb80bf129665e724400d6207ed4f10a3d6243962d81",
+      "users": [
+        "user2",
+        "user3"
+      ]
     },
     {
       "chunkId": 2,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "02f7bf4df162b934455aec67c1c86c682a535758bf6f8a9b81fc4966755fab9e"
+      "hash": "8b6f6613b51e5e9ef46510bd29f90d3ef606e7d53aad06760020c704a0c41c9f",
+      "users": [
+        "user3",
+        "user4"
+      ]
     },
     {
       "chunkId": 3,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "8dd131c452aa5ff56429a698f816a5e319e16a98493745e0cb9088f58758b554"
+      "hash": "9da278a708ecfc450ca254399c8b7e66ac145b0490afe9d8d904ceb76ad08024",
+      "users": [
+        "user4",
+        "user5"
+      ]
     },
     {
       "chunkId": 4,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "8b5ee76b985deb45084dd57ad663bf700930ecd26048be832e320b24d1673185"
+      "hash": "78378ae9c66dc614ed97e40f711f6e31cacdb516ea07808c0a9d674714b11313",
+      "users": [
+        "user5",
+        "user1"
+      ]
     },
     {
       "chunkId": 5,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "e42fb5f03b3301a098fabb9b8b3aeba0ced7d780b6a2db8e0140ab8077f22eb1"
+      "hash": "e82af62f0fc739e4f3ab295141ce7787e08a2185e0d6eff8f63badad753a95fc",
+      "users": [
+        "user1",
+        "user2"
+      ]
     },
     {
       "chunkId": 6,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "b7480188fdabbcfe3db70d231667d1a2a8bb0f8f86139130dde1463913edd843"
+      "hash": "74708d49dc92944b72a7fd8d8ee5433938701eeb91a670bd0c7ecdd4d1ff9b9b",
+      "users": [
+        "user2",
+        "user3"
+      ]
     },
     {
       "chunkId": 7,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "57ade0f733aba55cbd3b4c62c2befe851839b4fd787e9da2b6cf621cd3e1e8ed"
-    },
-    {
-      "chunkId": 8,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "24d09396cfa980d23ec3ed7c98e7ce8996eb24a48eb6ec32d8fd1e6a10b20465"
-    },
-    {
-      "chunkId": 9,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "8f0c6db34f0c836632d3cc8cdb0a3ddc67967f4eb90bda3f7348152e9bec0e4c"
-    },
-    {
-      "chunkId": 10,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "53da95c98410cdf32b426b6b6f84cd37f1285d9158fce900367bcef35d5fa3e3"
-    },
-    {
-      "chunkId": 11,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "0e00103ff48234b7e7a5bc7412afe6492132396e577f0037404cd76c2f3c0b9f"
-    },
-    {
-      "chunkId": 12,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "fc4d2f2c3cb6e1cf0b2d691e3e81a564a7d336e11ddd865e441c9af4d49c408b"
-    },
-    {
-      "chunkId": 13,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "4d93884246ca5d7739d38a3c931ac18f913e848e63064b46de66636d6f52aa2d"
-    },
-    {
-      "chunkId": 14,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "b0b5299559f144383799c3562c01936078a1f3c1be9b764358dd5078fbb55b4c"
-    },
-    {
-      "chunkId": 15,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "f368f7f9fd00c5852892d95dafdfcf9fc09219f2acb1dc7c15d37471dbb8b721"
-    },
-    {
-      "chunkId": 16,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "11b10dc49bd23601dcf032c0451d82f860c51a1b545865b9f062d97e983dbc9f"
-    },
-    {
-      "chunkId": 17,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "ba350ac430b890b99d17d09253bcd5dcf69979be633e516c21537eb695ac7b13"
-    },
-    {
-      "chunkId": 0,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "608686b0b386c0949403d322a56a45182991030ed82efe71174c7191670a9d05"
-    },
-    {
-      "chunkId": 1,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "dbef3d8b6eee8448d36c0d760bb5ddb6c6e78d7132ad441b762c0a23d7115e1d"
-    },
-    {
-      "chunkId": 2,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "02f7bf4df162b934455aec67c1c86c682a535758bf6f8a9b81fc4966755fab9e"
-    },
-    {
-      "chunkId": 3,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "8dd131c452aa5ff56429a698f816a5e319e16a98493745e0cb9088f58758b554"
-    },
-    {
-      "chunkId": 4,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "8b5ee76b985deb45084dd57ad663bf700930ecd26048be832e320b24d1673185"
-    },
-    {
-      "chunkId": 5,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "e42fb5f03b3301a098fabb9b8b3aeba0ced7d780b6a2db8e0140ab8077f22eb1"
-    },
-    {
-      "chunkId": 6,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "b7480188fdabbcfe3db70d231667d1a2a8bb0f8f86139130dde1463913edd843"
-    },
-    {
-      "chunkId": 7,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "57ade0f733aba55cbd3b4c62c2befe851839b4fd787e9da2b6cf621cd3e1e8ed"
-    },
-    {
-      "chunkId": 8,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "24d09396cfa980d23ec3ed7c98e7ce8996eb24a48eb6ec32d8fd1e6a10b20465"
-    },
-    {
-      "chunkId": 9,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "8f0c6db34f0c836632d3cc8cdb0a3ddc67967f4eb90bda3f7348152e9bec0e4c"
-    },
-    {
-      "chunkId": 10,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "53da95c98410cdf32b426b6b6f84cd37f1285d9158fce900367bcef35d5fa3e3"
-    },
-    {
-      "chunkId": 11,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "0e00103ff48234b7e7a5bc7412afe6492132396e577f0037404cd76c2f3c0b9f"
-    },
-    {
-      "chunkId": 12,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "fc4d2f2c3cb6e1cf0b2d691e3e81a564a7d336e11ddd865e441c9af4d49c408b"
-    },
-    {
-      "chunkId": 13,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "4d93884246ca5d7739d38a3c931ac18f913e848e63064b46de66636d6f52aa2d"
-    },
-    {
-      "chunkId": 14,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "b0b5299559f144383799c3562c01936078a1f3c1be9b764358dd5078fbb55b4c"
-    },
-    {
-      "chunkId": 15,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "f368f7f9fd00c5852892d95dafdfcf9fc09219f2acb1dc7c15d37471dbb8b721"
-    },
-    {
-      "chunkId": 16,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "11b10dc49bd23601dcf032c0451d82f860c51a1b545865b9f062d97e983dbc9f"
-    },
-    {
-      "chunkId": 17,
-      "nodeHost": "127.0.0.1",
-      "nodePort": 5000,
-      "hash": "ba350ac430b890b99d17d09253bcd5dcf69979be633e516c21537eb695ac7b13"
+      "hash": "d6c407b9c99555f33bb3ef550b89eaa06aa7fcde1336713ac6b279c48a83c00c",
+      "users": [
+        "user3",
+        "user4"
+      ]
     }
   ]
 }
