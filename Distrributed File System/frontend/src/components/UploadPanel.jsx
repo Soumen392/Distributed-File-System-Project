@@ -1,7 +1,10 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
 
-export default function UploadPanel() {
-  const [selectedFile, setSelectedFile] = useState(null);
+export default function UploadPanel({ refreshData }) {
+  const [selectedFile, setSelectedFile] =
+    useState(null);
+
   const [progress, setProgress] = useState(0);
 
   function handleFileChange(event) {
@@ -13,20 +16,40 @@ export default function UploadPanel() {
     }
   }
 
-  function simulateUpload() {
+  async function simulateUpload() {
     if (!selectedFile) return;
 
-    let value = 0;
+    try {
+      const formData = new FormData();
 
-    const interval = setInterval(() => {
-      value += 10;
+      formData.append("file", selectedFile);
 
-      setProgress(value);
+      setProgress(20);
 
-      if (value >= 100) {
-        clearInterval(interval);
-      }
-    }, 300);
+      const response = await fetch(
+        "http://localhost:5000/api/upload",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      setProgress(70);
+
+
+      const data = await response.json();
+
+      console.log(data);
+
+      setProgress(100);
+      refreshData();
+
+      toast.success("File uploaded successfully");
+    } catch (error) {
+      console.error(error);
+
+      toast.error("Upload failed");
+    }
   }
 
   return (
@@ -69,34 +92,42 @@ export default function UploadPanel() {
           </p>
 
           <p className="text-slate-400">
-            Upload files for chunking and distribution
+            Upload files for chunking and
+            distribution
           </p>
 
           {selectedFile && (
-            <div className="
-              mt-6
-              bg-slate-900
-              border border-slate-700
-              rounded-2xl
-              p-4
-              text-left
-            ">
+            <div
+              className="
+                mt-6
+                bg-slate-900
+                border border-slate-700
+                rounded-2xl
+                p-4
+                text-left
+              "
+            >
               <p className="font-medium text-lg">
                 {selectedFile.name}
               </p>
 
               <p className="text-slate-400 text-sm mt-1">
-                {(selectedFile.size / 1024).toFixed(2)} KB
+                {(
+                  selectedFile.size / 1024
+                ).toFixed(2)}{" "}
+                KB
               </p>
 
               <div className="mt-4">
-                <div className="
-                  w-full
-                  h-3
-                  bg-slate-800
-                  rounded-full
-                  overflow-hidden
-                ">
+                <div
+                  className="
+                    w-full
+                    h-3
+                    bg-slate-800
+                    rounded-full
+                    overflow-hidden
+                  "
+                >
                   <div
                     className="
                       h-full
@@ -104,7 +135,9 @@ export default function UploadPanel() {
                       transition-all
                       duration-300
                     "
-                    style={{ width: `${progress}%` }}
+                    style={{
+                      width: `${progress}%`,
+                    }}
                   ></div>
                 </div>
 
