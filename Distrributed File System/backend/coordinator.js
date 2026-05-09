@@ -8,18 +8,18 @@ const CHUNK_SIZE = 4 * 1024;
 const METADATA_FILE = path.join(__dirname, "metadata.json");
 const USERS_FOLDER = path.join(__dirname, "users");
 
-const USERS = ["user1", "user2", "user3", "user4", "user5"];
+const USERS = fs
+  .readdirSync(USERS_FOLDER)
+  .filter((file) =>
+    fs.statSync(
+      path.join(USERS_FOLDER, file)
+    ).isDirectory()
+  );
 
 if (!fs.existsSync(USERS_FOLDER)) {
   fs.mkdirSync(USERS_FOLDER);
 }
 
-for (const user of USERS) {
-  const userPath = path.join(USERS_FOLDER, user);
-  if (!fs.existsSync(userPath)) {
-    fs.mkdirSync(userPath, { recursive: true });
-  }
-}
 
 let metadata = {};
 
@@ -61,7 +61,7 @@ function chunkFile(filePath) {
 }
 
 function handleRequest(socket) {
-  socket.on("data", () => {});
+  socket.on("data", () => { });
   socket.on("end", () => {
     socket.end();
   });

@@ -1,35 +1,40 @@
+import { useState } from "react";
+
 import Header from "./components/Header";
 import DashboardCards from "./components/DashboardCards";
 import UploadPanel from "./components/UploadPanel";
 import LogsPanel from "./components/LogsPanel";
 import FileTable from "./components/FileTable";
 import NodesGrid from "./components/NodesGrid";
-import SearchPanel from "./components/SearchPanel";
 import ChunkDistribution from "./components/ChunkDistribution";
 
 function App() {
+  const [refresh, setRefresh] = useState(false);
+
+  function refreshData() {
+    setRefresh((prev) => !prev);
+  }
+
   return (
     <div className="min-h-screen bg-[#0f172a] text-white">
       <div className="max-w-7xl mx-auto p-6 space-y-6">
         <Header />
 
-        <DashboardCards />
+        <DashboardCards refresh={refresh} />
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="lg:col-span-2">
-            <UploadPanel />
+            <UploadPanel refreshData={refreshData} />
           </div>
 
           <LogsPanel />
         </div>
 
-        <FileTable />
+        <FileTable refresh={refresh} />
 
-        <SearchPanel />
+        <ChunkDistribution refresh={refresh} />
 
-        <ChunkDistribution />
-
-        <NodesGrid />
+        <NodesGrid refresh={refresh} />
       </div>
     </div>
   );

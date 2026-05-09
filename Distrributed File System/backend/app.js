@@ -8,6 +8,7 @@ const nodeRoutes = require("./routes/nodeRoutes");
 const healthRoutes = require("./routes/healthRoutes");
 
 const app = express();
+
 const server = http.createServer(app);
 
 const io = new Server(server, {
@@ -20,11 +21,15 @@ const io = new Server(server, {
 app.set("io", io);
 
 app.use(cors());
+
 app.use(express.json());
+
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/api", fileRoutes);
+
 app.use("/api", nodeRoutes);
+
 app.use("/api", healthRoutes);
 
 app.get("/", (req, res) => {
@@ -34,17 +39,31 @@ app.get("/", (req, res) => {
 });
 
 io.on("connection", (socket) => {
-  console.log("Socket connected:", socket.id);
+  console.log(
+    "Frontend connected:",
+    socket.id
+  );
 
-  socket.emit("message", "Connected to backend");
+  socket.emit(
+    "log",
+    "Connected to distributed storage server"
+  );
 
   socket.on("disconnect", () => {
-    console.log("Socket disconnected:", socket.id);
+    console.log(
+      "Frontend disconnected:",
+      socket.id
+    );
   });
 });
 
 const PORT = 5000;
 
 server.listen(PORT, () => {
-  console.log("Backend running on port", PORT);
+  console.log(
+    "Backend running on port",
+    PORT
+  );
 });
+
+module.exports = io;
