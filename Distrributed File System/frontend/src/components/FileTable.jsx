@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { FileText } from "lucide-react";
 
 export default function FileTable({ refresh }) {
   const [files, setFiles] = useState([]);
@@ -31,7 +32,6 @@ export default function FileTable({ refresh }) {
         id: "download",
       });
 
-      // merge first
       await fetch(
         `http://localhost:5000/api/merge/${filename}`,
         {
@@ -39,7 +39,6 @@ export default function FileTable({ refresh }) {
         }
       );
 
-      // download after merge
       window.open(
         `http://localhost:5000/api/download/${filename}`
       );
@@ -62,8 +61,15 @@ export default function FileTable({ refresh }) {
       .includes(search.toLowerCase())
   );
 
+  function getFileType(filename) {
+    return (
+      filename.split(".").pop()?.toUpperCase() ||
+      "FILE"
+    );
+  }
+
   return (
-    <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6">
+    <div className="bg-slate-900 border border-slate-800 rounded-3xl p-4 md:p-6">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
         <div>
           <h2 className="text-2xl font-semibold">
@@ -120,11 +126,15 @@ export default function FileTable({ refresh }) {
       </div>
 
       <div className="overflow-x-auto">
-        <table className="w-full">
+        <table className="w-full min-w-[700px]">
           <thead>
             <tr className="border-b border-slate-800 text-slate-400">
               <th className="text-left py-4">
                 File
+              </th>
+
+              <th className="hidden md:table-cell text-left py-4">
+                Type
               </th>
 
               <th className="text-left py-4">
@@ -135,7 +145,7 @@ export default function FileTable({ refresh }) {
                 Size
               </th>
 
-              <th className="text-left py-4">
+              <th className="hidden lg:table-cell text-left py-4">
                 Status
               </th>
 
@@ -149,7 +159,7 @@ export default function FileTable({ refresh }) {
             {filteredFiles.length === 0 ? (
               <tr>
                 <td
-                  colSpan="5"
+                  colSpan="6"
                   className="
                     text-center
                     py-12
@@ -170,10 +180,58 @@ export default function FileTable({ refresh }) {
                     transition
                   "
                 >
-                  <td className="py-5 font-medium">
-                    {file.filename}
+                  {/* FILE NAME */}
+                  <td className="py-5">
+                    <div className="flex items-center gap-3 min-w-[220px]">
+                      <div className="
+                        w-10
+                        h-10
+                        rounded-xl
+                        bg-slate-800
+                        border border-slate-700
+                        flex
+                        items-center
+                        justify-center
+                        shrink-0
+                      ">
+                        <FileText
+                          size={18}
+                          className="text-blue-400"
+                        />
+                      </div>
+
+                      <div className="min-w-0">
+                        <p className="
+                          font-semibold
+                          text-white
+                          tracking-wide
+                          text-[15px]
+                          truncate
+                        ">
+                          {file.filename}
+                        </p>
+                      </div>
+                    </div>
                   </td>
 
+                  {/* FILE TYPE */}
+                  <td className="hidden md:table-cell">
+                    <span className="
+                      bg-purple-500/10
+                      text-purple-400
+                      border border-purple-500/20
+                      px-3
+                      py-1
+                      rounded-xl
+                      text-sm
+                    ">
+                      {getFileType(
+                        file.filename
+                      )}
+                    </span>
+                  </td>
+
+                  {/* CHUNKS */}
                   <td>
                     <span className="
                       bg-blue-500/10
@@ -182,21 +240,47 @@ export default function FileTable({ refresh }) {
                       py-1
                       rounded-xl
                       text-sm
+                      whitespace-nowrap
                     ">
                       {file.chunks} Chunks
                     </span>
                   </td>
 
-                  <td className="text-slate-300">
-                    {(file.size / 1024).toFixed(2)} KB
+                  {/* SIZE */}
+                  <td>
+                    <span className="
+                      bg-orange-500/10
+                      text-orange-400
+                      border border-orange-500/20
+                      px-3
+                      py-1
+                      rounded-xl
+                      text-sm
+                      whitespace-nowrap
+                    ">
+                      {(file.size / 1024).toFixed(
+                        2
+                      )}{" "}
+                      KB
+                    </span>
                   </td>
 
-                  <td>
-                    <span className="bg-emerald-500/20 text-emerald-400 px-3 py-1 rounded-xl text-sm">
+                  {/* STATUS */}
+                  <td className="hidden lg:table-cell">
+                    <span className="
+                      bg-emerald-500/20
+                      text-emerald-400
+                      px-3
+                      py-1
+                      rounded-xl
+                      text-sm
+                      whitespace-nowrap
+                    ">
                       Distributed
                     </span>
                   </td>
 
+                  {/* ACTIONS */}
                   <td>
                     <button
                       onClick={() =>
@@ -207,12 +291,14 @@ export default function FileTable({ refresh }) {
                       className="
                         bg-emerald-600
                         hover:bg-emerald-500
-                        px-4
+                        px-3
+                        md:px-5
                         py-2
                         rounded-xl
                         transition
                         text-sm
                         font-medium
+                        whitespace-nowrap
                       "
                     >
                       Download

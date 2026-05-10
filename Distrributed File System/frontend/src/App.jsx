@@ -7,6 +7,7 @@ import LogsPanel from "./components/LogsPanel";
 import FileTable from "./components/FileTable";
 import NodesGrid from "./components/NodesGrid";
 import ChunkDistribution from "./components/ChunkDistribution";
+import Footer from "./components/Footer";
 
 function App() {
   const [refresh, setRefresh] = useState(false);
@@ -35,6 +36,8 @@ function App() {
         <ChunkDistribution refresh={refresh} />
 
         <NodesGrid refresh={refresh} />
+
+        <Footer />
       </div>
     </div>
   );
